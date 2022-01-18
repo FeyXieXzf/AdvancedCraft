@@ -1,6 +1,7 @@
 package me.trixxie.advancedcraft;
 
 import com.tchristofferson.configupdater.ConfigUpdater;
+import me.trixxie.advancedcraft.commands.mainCommands;
 import me.trixxie.advancedcraft.listeners.*;
 import me.trixxie.advancedcraft.utils.UpdateChecker;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -49,6 +50,8 @@ public final class Advancedcraft extends JavaPlugin {
         this.getServer().getPluginManager().registerEvents(new enchantmentStorage(), this);
         this.getServer().getPluginManager().registerEvents(new slimeScoop(), this);
 
+        //COMMANDS
+        this.getCommand("advancedcraft").setExecutor(new mainCommands());
     }
 
 

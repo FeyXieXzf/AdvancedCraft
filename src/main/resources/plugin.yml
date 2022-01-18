@@ -4,3 +4,10 @@ main: me.trixxie.advancedcraft.Advancedcraft
 api-version: 1.18
 authors: [ Trixxie ]
 description: Advanced mechanics to your server
+commands:
+  advancedcraft:
+    description: Get important information about plugin, and general commanding
+    usage: /<command>
+    aliases:
+      - ac
+      - advanced
