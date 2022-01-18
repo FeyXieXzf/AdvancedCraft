@@ -1,0 +1,6 @@
+name: AdvancedCraft
+version: '${project.version}'
+main: me.trixxie.advancedcraft.Advancedcraft
+api-version: 1.18
+authors: [ Trixxie ]
+description: Advanced mechanics to your server
