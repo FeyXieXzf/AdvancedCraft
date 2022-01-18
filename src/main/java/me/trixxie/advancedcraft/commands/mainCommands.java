@@ -44,6 +44,15 @@ public class mainCommands implements CommandExecutor {
                     });
                 }
             }
+            if(args[0].equalsIgnoreCase("reload")){
+                if(sender instanceof Player){
+                    Player p = (Player) sender;
+                    if(p.hasPermission("advancedcraft.admin")){
+                        plugin.reloadConfig();
+                        p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&6&lAC&r &8» &aConfig reloaded!"));
+                    }
+                }
+            }
         }
         return true;
     }
