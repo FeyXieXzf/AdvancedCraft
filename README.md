@@ -30,12 +30,7 @@ Getting slime balls OR magma cream can be hefty job sometimes, well why not allo
 ## Permissions (optional)
 If you want to restrict some of the features to only a certain group of people, you can enable "use-permissions" in **config.yml**. This makes it that the players need specific permissions to for example smelt with hands.
 
-    advancedcraft.* - Every permission (default op)
-    
-    advancedcraft.layers - Allow player to utilize layers
-    advancedcraft.smelt - Allow player to utilize hand smelting
-    advancedcraft.xpstorage - Allow player to store XP back into bottles
-    advancedcraft.slimescoop - Allow player to scoop slime balls or magma cream
+**[All permissions in Wiki](https://github.com/NotTrixxie/Advancedcraft/wiki/Permissions)**
     
 
 ## What next?
