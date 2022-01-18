@@ -53,6 +53,15 @@ public class mainCommands implements CommandExecutor {
                     }
                 }
             }
+        } else {
+            if(sender instanceof Player){
+                Player p = (Player) sender;
+                if(p.hasPermission("advancedcraft.admin")){
+                    p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&6&lAdvancedcraft help"));
+                    p.sendMessage(ChatColor.GRAY + "/ac reload - Reloads plugin's config");
+                    p.sendMessage(ChatColor.GRAY + "/ac update - Checks for updates");
+                }
+            }
         }
         return true;
     }
