@@ -2,6 +2,7 @@ package me.trixxie.advancedcraft;
 
 import com.tchristofferson.configupdater.ConfigUpdater;
 import me.trixxie.advancedcraft.listeners.*;
+import me.trixxie.advancedcraft.utils.UpdateChecker;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.File;
@@ -16,6 +17,14 @@ public final class Advancedcraft extends JavaPlugin {
     public void onEnable() {
         // Plugin startup logic
         plugin = this;
+
+        //UPDATE CHECKER
+        new UpdateChecker(this, 99235).getVersion(version -> {
+            if (!this.getDescription().getVersion().equals(version)) {
+                getLogger().info("There is a new update available.");
+                getLogger().info("https://www.spigotmc.org/resources/99235/updates");
+            }
+        });
 
         //CONFIG SHIT UPDATER
         getConfig().options().copyDefaults();
