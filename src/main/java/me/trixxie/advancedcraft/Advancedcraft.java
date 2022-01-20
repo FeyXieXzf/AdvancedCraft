@@ -3,6 +3,7 @@ package me.trixxie.advancedcraft;
 import com.tchristofferson.configupdater.ConfigUpdater;
 import me.trixxie.advancedcraft.commands.mainCommands;
 import me.trixxie.advancedcraft.listeners.*;
+import me.trixxie.advancedcraft.utils.Metrics;
 import me.trixxie.advancedcraft.utils.UpdateChecker;
 import org.bukkit.plugin.java.JavaPlugin;
 

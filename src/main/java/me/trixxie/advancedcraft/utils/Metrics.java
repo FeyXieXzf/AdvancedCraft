@@ -1,4 +1,4 @@
-package me.trixxie.advancedcraft;
+package me.trixxie.advancedcraft.utils;
 
 import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
