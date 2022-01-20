@@ -2,6 +2,7 @@ package me.trixxie.advancedcraft.commands;
 
 import me.trixxie.advancedcraft.Advancedcraft;
 import me.trixxie.advancedcraft.utils.UpdateChecker;
+import me.trixxie.advancedcraft.utils.messageUtil;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -24,14 +25,14 @@ public class mainCommands implements CommandExecutor {
                     if(p.hasPermission("advancedcraft.admin")) {
                         new UpdateChecker(plugin, 99235).getVersion(version -> {
                             if (!plugin.getDescription().getVersion().equals(version)) {
-                                p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&6&lAC&r &8» &aThere is a new update available."));
-                                p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&7&n&ohttps://www.spigotmc.org/resources/99235/updates"));
+                                messageUtil.messageWithPrefix(p, "There is a new update available.");
+                                messageUtil.messageWithPrefix(p, "&7&n&ohttps://www.spigotmc.org/resources/99235/updates");
                             } else {
-                                p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&6&lAC&r &8» &aNo update found!"));
+                                messageUtil.messageWithPrefix(p, "No update found!");
                             }
                         });
                     } else {
-                        p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&6&lAC&r &8» &cYou don't have permission to use this command."));
+                        messageUtil.sendError(p, messageUtil.Errors.NO_PERMS);
                     }
                 } else {
                     new UpdateChecker(plugin, 99235).getVersion(version -> {
@@ -49,7 +50,7 @@ public class mainCommands implements CommandExecutor {
                     Player p = (Player) sender;
                     if(p.hasPermission("advancedcraft.admin")){
                         plugin.reloadConfig();
-                        p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&6&lAC&r &8» &aConfig reloaded!"));
+                        messageUtil.messageWithPrefix(p, "Config reloaded!");
                     }
                 }
             }
