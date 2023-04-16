@@ -1,6 +1,6 @@
 package me.trixxie.advancedcraft.listeners;
 
-import me.trixxie.advancedcraft.Advancedcraft;
+import me.trixxie.advancedcraft.AdvancedCraft;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.entity.EntityType;
@@ -14,7 +14,7 @@ import org.bukkit.inventory.meta.SkullMeta;
 
 public class zombieInfect implements Listener {
 
-    private Advancedcraft plugin = Advancedcraft.get();
+    private final AdvancedCraft plugin = AdvancedCraft.get();
 
     @EventHandler
     public void zombieKillEvent(EntityDamageByEntityEvent e) {

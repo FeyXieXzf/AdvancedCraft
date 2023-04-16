@@ -1,6 +1,6 @@
 package me.trixxie.advancedcraft.listeners;
 
-import me.trixxie.advancedcraft.Advancedcraft;
+import me.trixxie.advancedcraft.AdvancedCraft;
 import org.bukkit.Material;
 import org.bukkit.entity.MagmaCube;
 import org.bukkit.entity.Player;
@@ -14,14 +14,14 @@ import java.util.Random;
 
 public class slimeScoop implements Listener {
 
-    private Advancedcraft plugin = Advancedcraft.get();
+    private final AdvancedCraft plugin = AdvancedCraft.get();
 
     @EventHandler
     public void slimeDrops(EntityDamageByEntityEvent e) {
         if (e.getDamager() instanceof Player) {
             Player p = (Player) e.getDamager();
             if (plugin.getConfig().getBoolean("use-permissions")) {
-                if (!p.hasPermission("advancedcraft.slimescoop")) return;
+                if (!p.hasPermission("advancedcraft.slimescooping")) return;
             }
             if (p.getEquipment().getItemInMainHand().getType().toString().toLowerCase().contains("shovel")) {
                 if (e.getEntity() instanceof Slime) {
@@ -43,14 +43,10 @@ public class slimeScoop implements Listener {
     }
 
     private boolean countChance() {
-        Integer chancePercentage = plugin.getConfig().getInt("slime-drop-chance");
+        int chancePercentage = plugin.getConfig().getInt("slime-drop-chance");
         Random rand = new Random();
 
-        int  n = rand.nextInt(100) + 1;
-        if (n<=chancePercentage){
-            return true;
-        } else {
-            return false;
-        }
+        int n = rand.nextInt(100) + 1;
+        return n <= chancePercentage;
     }
 }

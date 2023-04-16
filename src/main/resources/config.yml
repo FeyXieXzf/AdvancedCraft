@@ -1,34 +1,11 @@
-# Utilise permissions,
-# this means that for example layered stone, player needs permission in order to have layered stone presented to them
+# Players need permission in order to trigger the features
 use-permissions: false
 
-# Make 1 stone and deepslate last longer, you can enable this feature called "layered stone"
-# When you break stone it becomes cobblestone and when you break deepslate it becomes cobbled deepslate
-layered-stone: true
+# If a player is killed by a zombie, a new Zombie is spawned with the player's head
+zombie-infecting: true
 
-# You can also layer ores (all of them), making it so that the ore becomes cobbled.
-# If you want add extra layer to ores, meaning ore becomes stone and then cobbled, follow the markings below
-# 0 = no layered ore
-# 1 = 1 layer ore (ore -> cobbled)
-# 2 = 2 layer ore (ore -> stone -> cobbled)
-layered-ore: 2
-
-# Do you want to allow players to smelt ores with their bare hands,
-# they need fuel (check "accepted-fuel") in off-hand and raw ore in mainhand, then just right click
-hand-smelter: true
-acceptable-fuel:
-  - COAL
-  - CHARCOAL
-  - BLAZE_ROD
-
-# Infected zombies, means that if player is killed by a Zombie, a new Zombie is spawned with player's head
-infected-zombies: true
-
-# XP storage means that players are able to store their experience points into empty bottles, making experience bottles
-XPstorage: true
-
-# Slime scooping means that if the player is hitting a Slime with shovel, they have a chance to drop some slime balls
+# If a player damages slimes/magma cubes with a shovel, they have a chance to drop slime balls/magma cream
 slime-scooping: true
 magmacube-scooping: true
-slime-drop-chance: 50 # Can be in a range of 1-100
-extra-slime-count: 2 # How many slime balls / magma cream should scoop give?
+slime-drop-chance: 50 # ranged from 1 to 100
+extra-slime-count: 2
